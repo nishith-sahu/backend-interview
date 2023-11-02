@@ -108,3 +108,101 @@ We are looking for:
 2. Solution Design
 3. Completeness
 4. Code clarity / readability
+
+
+
+
+
+Order Management API
+This is a simple API for managing orders. It allows you to perform CRUD operations (Create, Read, Update, Delete) on orders. You can create new orders, retrieve existing orders, update order details, and delete orders.
+
+Table of Contents
+1 Installation
+2 Usage
+3 Endpoints
+4 Example Requests
+5 Testing
+6 Installation
+Before using this API, make sure you have Node.js and npm (Node Package Manager) installed on your system. Additionally, you need to set up a MongoDB database and provide the connection string.
+
+Clone the repository:
+
+
+
+git clone https://github.com/your-username/order-management-api.git
+cd order-management-api
+Install dependencies:
+
+
+
+npm install
+Set up your MongoDB database:
+
+Create a .env file in the project directory.
+
+Add your MongoDB connection string in the .env file:
+
+c
+
+MONGODB_URI=your-mongodb-connection-string
+Replace your-mongodb-connection-string with your actual MongoDB connection string.
+
+Start the API server:
+
+
+
+npm start
+The API will start running on http://localhost:3000 by default.
+
+Usage
+This API allows you to perform the following CRUD operations on orders:
+
+Create: Create a new order.
+Read: Retrieve existing orders or a specific order.
+Update: Update order details.
+Delete: Delete an order.
+Endpoints
+The API provides the following endpoints:
+
+POST /orders: Create a new order.
+GET /orders: Retrieve all orders.
+GET /orders/:orderId: Retrieve a specific order.
+PUT /orders/:orderId: Update order details.
+DELETE /orders/:orderId: Delete an order.
+Example Requests
+Here are some example requests to interact with the API using a tool like curl. You can use API testing tools like Postman or your preferred programming language to make these requests.
+
+Create a new order:
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{"product": "Product Name", "quantity": 5}' http://localhost:3000/orders
+Retrieve all orders:
+
+
+
+curl http://localhost:3000/orders
+Retrieve a specific order (replace :orderId with the actual order ID):
+
+
+
+curl http://localhost:3000/orders/:orderId
+Update an order (replace :orderId with the actual order ID):
+
+
+
+curl -X PUT -H "Content-Type: application/json" -d '{"quantity": 10}' http://localhost:3000/orders/:orderId
+Delete an order (replace :orderId with the actual order ID):
+
+
+
+curl -X DELETE http://localhost:3000/orders/:orderId
+Testing
+The API includes tests to ensure its functionality. You can run the tests using the following command:
+
+
+
+npm test
+Make sure your API server is not running while running tests.
+
+That's it! You now have a fully functional Order Management API. Feel free to customize the API to meet your specific requirements and integrate it with your application.
